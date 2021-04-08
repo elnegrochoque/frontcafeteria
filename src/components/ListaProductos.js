@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const ListaProductos = () => {
     return (
-        <div>
-            <h1>Pagina lista de productos</h1>
-        </div>
+      <Fragment>
+        
+      </Fragment>
     );
 };
 

@@ -1,9 +1,13 @@
-import React from 'react';
-import Navegacion from './common/Navegacion';
+import React, { Fragment } from 'react';
+import cafe from '../img/coffee.jpg'
 
 const Inicio = () => {
     return (
-       <Navegacion></Navegacion>
+        <Fragment>
+         
+            <img src={cafe} alt="imagen del cafe" className='w-100'/>
+           
+        </Fragment>
     );
 };
 

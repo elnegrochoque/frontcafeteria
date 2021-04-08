@@ -4,10 +4,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Inicio from "./components/Inicio";
 import ListaProductos from "./components/ListaProductos";
 import AgregarProducto from "./components/AgregarProducto";
+import Navegacion from "./components/common/Navegacion";
+import Footer from "./components/common/Footer";
 
 function App() {
   return (
     <Router>
+      <Navegacion></Navegacion>
       <Switch>
         <Route exact path="/">
           <Inicio></Inicio>
@@ -19,6 +22,7 @@ function App() {
           <AgregarProducto></AgregarProducto>
         </Route>
       </Switch>
+      <Footer></Footer>
     </Router>
   );
 }
