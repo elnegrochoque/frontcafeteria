@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
+import Swal from 'sweetalert2';
 
 const AgregarProducto = () => {
 
@@ -12,7 +13,7 @@ const AgregarProducto = () => {
 
   const cambiarCategoria = (e) => { setCategoria(e.target.value) }
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     //  validar los datos
     if (nombreProducto.trim() === '' || precioProducto.trim() === '' || categoria === '') {
@@ -33,10 +34,10 @@ const AgregarProducto = () => {
       console.log(datos);
 
       //enviar objetoa la api, operacion POST
-      try{
-        const parametros ={
+      try {
+        const parametros = {
           method: "POST",
-          headers:{
+          headers: {
             "Content-Type": "application/json"
           },
           body: JSON.stringify(datos)
@@ -44,7 +45,20 @@ const AgregarProducto = () => {
         // ejecutar la solicitud o request
         const respuesta = await fetch(URL, parametros);
         console.log(respuesta);
-      }catch(error){
+        if ((await respuesta.status) === 201) {
+
+          Swal.fire(
+            'Producto agregado',
+            'Se carga un nuevo producto a la cafeteria',
+            'success'
+          )
+          //limpiar el formulario
+            setNombreProducto('');
+            setPrecioProducto('');
+            setCategoria('');
+          // redireccionar a otra ruta
+        }
+      } catch (error) {
         console.log(error);
       }
     }
@@ -63,11 +77,12 @@ const AgregarProducto = () => {
             </Alert>) : null}
 
             <Form.Label>Nombre del producto *</Form.Label>
-            <Form.Control type="text" placeholder="Submarino" onChange={(e) => setNombreProducto(e.target.value)}></Form.Control>
+            <Form.Control type="text" placeholder="Submarino" onChange={(e) => setNombreProducto(e.target.value)}
+            value={nombreProducto}></Form.Control>
           </Form.Group>
           <Form.Group>
             <Form.Label>Precio *</Form.Label>
-            <Form.Control type="number" placeholder="$50" onChange={(e) => setPrecioProducto(e.target.value)}></Form.Control>
+            <Form.Control type="number" placeholder="$50" onChange={(e) => setPrecioProducto(e.target.value)} value={precioProducto}></Form.Control>
           </Form.Group>
           <div className='text-center my-4'>
             <h3>Categoria *</h3>
