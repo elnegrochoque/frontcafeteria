@@ -1,12 +1,6 @@
 {
   "cafeteria": [
     {
-      "nombreProducto": "cafe con leche",
-      "precioProducto": "80",
-      "categoria": "bebida-caliente",
-      "id": 1
-    },
-    {
       "nombreProducto": "submarino",
       "precioProducto": "100",
       "categoria": "bebida-caliente",
@@ -17,15 +11,6 @@
       "precioProducto": "100",
       "categoria": "salado",
       "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
     },
     {
       "nombreProducto": "cafe",
@@ -58,9 +43,9 @@
       "id": 11
     },
     {
-      "nombreProducto": "pan",
-      "precioProducto": "80",
-      "categoria": "salado",
+      "nombreProducto": "gaseosa",
+      "precioProducto": "70",
+      "categoria": "bebida-fria",
       "id": 12
     }
   ]
