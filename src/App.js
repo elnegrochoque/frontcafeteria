@@ -7,6 +7,7 @@ import AgregarProducto from "./components/Productos/AgregarProducto";
 import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
 import {useState, useEffect} from 'react';
+import EditarProducto from "./components/Productos/EditarProducto";
 
 
 function App() {
@@ -42,6 +43,10 @@ function App() {
         <Route exact path="/productos/nuevo">
           <AgregarProducto consultarAPI={consultarAPI}></AgregarProducto>
         </Route>
+        <Route exact path="/productos/editar/:id">
+          <EditarProducto></EditarProducto>
+        </Route>
+        
       </Switch>
       <Footer></Footer>
     </Router>

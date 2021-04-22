@@ -3,6 +3,7 @@ import { ListGroup, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const ItemProducto = (props) => {
 
@@ -39,11 +40,13 @@ const ItemProducto = (props) => {
                         //actualizar los datos
                         props.consultarAPI();
                     }
-                    else{  Swal.fire(
-                        'Error',
-                        'Se produjo un error',
-                        'error'
-                    )}
+                    else {
+                        Swal.fire(
+                            'Error',
+                            'Se produjo un error',
+                            'error'
+                        )
+                    }
                 } catch (error) {
                     console.log(error);
                     Swal.fire(
@@ -62,9 +65,10 @@ const ItemProducto = (props) => {
                     <span className='font-weight-bold'> ${props.producto.precioProducto}</span>
                 </p>
                 <div>
-                    <Button variant='warning' className='mr-2'>
-                        <FontAwesomeIcon icon={faPencilAlt} className='text-light'></FontAwesomeIcon>
-                    </Button>
+                    <Link to={`/productos/editar/${props.producto.id}`}className='btn btn-warning mr-2 text-light'>
+                        <FontAwesomeIcon icon={faPencilAlt} ></FontAwesomeIcon>
+                    </Link>
+
                     <Button variant='danger' onClick={() => eliminarProducto(props.producto.id)}>
                         <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
                     </Button>
