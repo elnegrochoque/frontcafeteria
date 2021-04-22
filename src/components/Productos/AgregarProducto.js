@@ -24,7 +24,7 @@ const AgregarProducto = (props) => {
       return;
     } else {
       // quitar cartel de error
-      console.log('aqui esta todo bien envio de datos')
+ 
       setError(false);
 
       // crear el objeto a enviar
@@ -33,7 +33,7 @@ const AgregarProducto = (props) => {
         precioProducto,
         categoria,
       };
-      console.log(datos);
+  
 
       //enviar objetoa la api, operacion POST
       try {
@@ -46,7 +46,7 @@ const AgregarProducto = (props) => {
         };
         // ejecutar la solicitud o request
         const respuesta = await fetch(URL, parametros);
-        console.log(respuesta);
+      
         if ((await respuesta.status) === 201) {
 
           Swal.fire(

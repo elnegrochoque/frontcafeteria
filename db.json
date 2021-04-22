@@ -13,14 +13,14 @@
       "id": 3
     },
     {
-      "nombreProducto": "cafe",
-      "precioProducto": "50",
-      "categoria": "bebida-caliente",
+      "nombreProducto": "cafe capuccino",
+      "precioProducto": "250",
+      "categoria": "dulce",
       "id": 7
     },
     {
       "nombreProducto": "te",
-      "precioProducto": "100",
+      "precioProducto": "10",
       "categoria": "bebida-caliente",
       "id": 8
     },

@@ -22,7 +22,7 @@ function App() {
     try {
       const consulta = await fetch(URL);
       const respuesta = await consulta.json();
-      console.log(respuesta);
+     
       setProductos(respuesta);
 
     } catch (error) {

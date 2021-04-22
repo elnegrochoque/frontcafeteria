@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 const ItemProducto = (props) => {
 
     const eliminarProducto = (id) => {
-        console.log(id);
+     
         const URL = process.env.REACT_APP_API_URL + '/' + id;
-        console.log(URL);
+
 
         Swal.fire({
             title: '¿Está seguro?',
