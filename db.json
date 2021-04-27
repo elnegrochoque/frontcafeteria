@@ -7,8 +7,8 @@
       "id": 2
     },
     {
-      "nombreProducto": "bizcochitos 100gr",
-      "precioProducto": "100",
+      "nombreProducto": "bizcochitos",
+      "precioProducto": "80",
       "categoria": "salado",
       "id": 3
     },
@@ -19,14 +19,8 @@
       "id": 7
     },
     {
-      "nombreProducto": "te",
-      "precioProducto": "10",
-      "categoria": "bebida-caliente",
-      "id": 8
-    },
-    {
       "nombreProducto": "medialuna",
-      "precioProducto": "40",
+      "precioProducto": "50",
       "categoria": "dulce",
       "id": 9
     },

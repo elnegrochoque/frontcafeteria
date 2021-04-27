@@ -6,28 +6,29 @@ import ListaProductos from "./components/Productos/ListaProductos";
 import AgregarProducto from "./components/Productos/AgregarProducto";
 import Navegacion from "./components/common/Navegacion";
 import Footer from "./components/common/Footer";
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import EditarProducto from "./components/Productos/EditarProducto";
+import Error404 from "./components/Error404";
 
 
 function App() {
   const URL = process.env.REACT_APP_API_URL;
-  const [productos, setProductos] =useState([]);
+  const [productos, setProductos] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     consultarAPI();
-  },[]);
+  }, []);
 
-  const consultarAPI = async() =>{
+  const consultarAPI = async () => {
     try {
       const consulta = await fetch(URL);
       const respuesta = await consulta.json();
-     
+
       setProductos(respuesta);
 
     } catch (error) {
       console.log(error);
-    }    
+    }
   }
 
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route exact path="/">
           <Inicio></Inicio>
         </Route>
+
         <Route exact path="/productos">
           <ListaProductos productos={productos} consultarAPI={consultarAPI}></ListaProductos>
         </Route>
@@ -44,9 +46,11 @@ function App() {
           <AgregarProducto consultarAPI={consultarAPI}></AgregarProducto>
         </Route>
         <Route exact path="/productos/editar/:id">
-          <EditarProducto></EditarProducto>
+          <EditarProducto consultarAPI={consultarAPI}></EditarProducto>
         </Route>
-        
+        <Route exact path='*'>
+          <Error404></Error404>
+        </Route>
       </Switch>
       <Footer></Footer>
     </Router>

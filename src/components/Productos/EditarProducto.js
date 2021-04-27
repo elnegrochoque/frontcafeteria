@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import { useParams, withRouter } from 'react-router-dom';
 import { campoRequerido, rangoValor } from '../helpers/validaciones';
 
-const EditarProducto = () => {
+const EditarProducto = (props) => {
 
     const { id } = useParams();
     const URL = process.env.REACT_APP_API_URL;
@@ -41,7 +41,7 @@ const EditarProducto = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         // revisar si la categoria cambio
-        const categoriaSeleccionada=(categoria === '')? producto.categoria: categoria;
+        const categoriaSeleccionada = (categoria === '') ? producto.categoria : categoria;
 
         // validar los datos
         if (campoRequerido(nombreProductoRef.current.value) &&
@@ -49,20 +49,33 @@ const EditarProducto = () => {
             campoRequerido(categoriaSeleccionada)) {
             // esta todo bien
             //armar el objeto a enviar
-            const productoEditado={
-                nombreProducto:nombreProductoRef.current.value,
-                precioProducto:precioProductoRef.current.value,
+            const productoEditado = {
+                nombreProducto: nombreProductoRef.current.value,
+                precioProducto: precioProductoRef.current.value,
                 categoria: categoriaSeleccionada
             }
-            
+
             console.log(productoEditado);
             try {
-                const respuesta = await fetch(URL+"/"+id,{
+                const respuesta = await fetch(URL + "/" + id, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
-                    body:JSON.stringify(productoEditado)
+                    body: JSON.stringify(productoEditado)
                 });
                 console.log(respuesta);
+                if (respuesta.status === 200) {
+                    Swal.fire(
+                        'Producto editado',
+                        'Los datos del producto fueron modificados',
+                        'success'
+                    );
+                    props.consultarAPI();
+                    // redireccionar a la pagina de lista de productos
+                    props.history.push("/productos");
+
+                } else {
+
+                }
             } catch (error) {
                 console.log(error);
             }
@@ -156,4 +169,4 @@ const EditarProducto = () => {
     );
 };
 
-export default EditarProducto;
+export default withRouter(EditarProducto);

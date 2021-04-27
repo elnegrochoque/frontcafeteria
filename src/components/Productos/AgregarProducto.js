@@ -7,7 +7,7 @@ import {withRouter} from 'react-router-dom';
 const AgregarProducto = (props) => {
 
   const URL = process.env.REACT_APP_API_URL;
-  console.log(URL);
+  
   const [nombreProducto, setNombreProducto] = useState('');
   const [precioProducto, setPrecioProducto] = useState('');
   const [categoria, setCategoria] = useState('');
