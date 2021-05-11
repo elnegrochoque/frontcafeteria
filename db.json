@@ -1,12 +1,6 @@
 {
   "cafeteria": [
     {
-      "nombreProducto": "submarino",
-      "precioProducto": "100",
-      "categoria": "bebida-caliente",
-      "id": 2
-    },
-    {
       "nombreProducto": "bizcochitos",
       "precioProducto": "80",
       "categoria": "salado",

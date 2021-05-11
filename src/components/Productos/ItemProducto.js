@@ -65,11 +65,11 @@ const ItemProducto = (props) => {
                     <span className='font-weight-bold'> ${props.producto.precioProducto}</span>
                 </p>
                 <div>
-                    <Link to={`/productos/editar/${props.producto.id}`}className='btn btn-warning mr-2 text-light'>
+                    <Link to={`/productos/editar/${props.producto._id}`}className='btn btn-warning mr-2 text-light'>
                         <FontAwesomeIcon icon={faPencilAlt} ></FontAwesomeIcon>
                     </Link>
 
-                    <Button variant='danger' onClick={() => eliminarProducto(props.producto.id)}>
+                    <Button variant='danger' onClick={() => eliminarProducto(props.producto._id)}>
                         <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
                     </Button>
                 </div>
