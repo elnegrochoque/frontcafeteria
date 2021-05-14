@@ -1,22 +1,40 @@
 {
-    "cafeteria":[
-        {
-            "nombreProducto":"cafe con leche",
-            "precioProducto": "80",
-            "categoria":"bebida-caliente",
-            "id": 1
-        },
-        {
-            "nombreProducto":"submarino",
-            "precioProducto": "100",
-            "categoria":"bebida-caliente",
-            "id": 2
-        },
-        {
-            "nombreProducto":"bizcochitos 100gr",
-            "precioProducto": "100",
-            "categoria":"salado",
-            "id": 3
-        }
-    ]
+  "cafeteria": [
+    {
+      "nombreProducto": "bizcochitos",
+      "precioProducto": "80",
+      "categoria": "salado",
+      "id": 3
+    },
+    {
+      "nombreProducto": "cafe capuccino",
+      "precioProducto": "250",
+      "categoria": "dulce",
+      "id": 7
+    },
+    {
+      "nombreProducto": "medialuna",
+      "precioProducto": "50",
+      "categoria": "dulce",
+      "id": 9
+    },
+    {
+      "nombreProducto": "brownie",
+      "precioProducto": "100",
+      "categoria": "bebida-fria",
+      "id": 10
+    },
+    {
+      "nombreProducto": "tortilla",
+      "precioProducto": "20",
+      "categoria": "salado",
+      "id": 11
+    },
+    {
+      "nombreProducto": "gaseosa",
+      "precioProducto": "70",
+      "categoria": "bebida-fria",
+      "id": 12
+    }
+  ]
 }
